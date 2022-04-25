@@ -27,6 +27,15 @@ public class VistaEmpleado extends javax.swing.JFrame {
         initComponents();
     }
 
+    public JButton getBtn_imprimir() {
+        return btn_imprimir;
+    }
+
+    public void setBtn_imprimir(JButton btn_imprimir) {
+        this.btn_imprimir = btn_imprimir;
+    }
+    
+    
     public JLabel getVal_horario() {
         return Val_horario;
     }
@@ -234,8 +243,7 @@ public class VistaEmpleado extends javax.swing.JFrame {
         val_salario = new javax.swing.JLabel();
         val_discapacidad = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
-        jButton4 = new javax.swing.JButton();
-        jButton5 = new javax.swing.JButton();
+        btn_imprimir = new javax.swing.JButton();
         jPanel2 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
         tbl_empleados = new javax.swing.JTable();
@@ -245,6 +253,7 @@ public class VistaEmpleado extends javax.swing.JFrame {
         btn_eliminar = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         txt_busqueda = new javax.swing.JTextField();
+        jLabel9 = new javax.swing.JLabel();
 
         btn_Guardar.setText("Guardar ");
         jPanel4.add(btn_Guardar);
@@ -319,7 +328,7 @@ public class VistaEmpleado extends javax.swing.JFrame {
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel5Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jPanel6, javax.swing.GroupLayout.DEFAULT_SIZE, 658, Short.MAX_VALUE)
+                .addComponent(jPanel6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addContainerGap())
         );
         jPanel5Layout.setVerticalGroup(
@@ -347,11 +356,8 @@ public class VistaEmpleado extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jButton4.setText("imprimir 1");
-        jPanel1.add(jButton4);
-
-        jButton5.setText("imprimir 2");
-        jPanel1.add(jButton5);
+        btn_imprimir.setText("Imprimir Reporte");
+        jPanel1.add(btn_imprimir);
 
         jPanel2.setLayout(new java.awt.BorderLayout());
 
@@ -375,6 +381,10 @@ public class VistaEmpleado extends javax.swing.JFrame {
 
         jLabel1.setText("BUSCADOR");
 
+        jLabel9.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
+        jLabel9.setText("?");
+        jLabel9.setToolTipText("Digite la cedula o nombre del empleado a buscar");
+
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
         jPanel3Layout.setHorizontalGroup(
@@ -384,7 +394,9 @@ public class VistaEmpleado extends javax.swing.JFrame {
                 .addComponent(jLabel1)
                 .addGap(18, 18, 18)
                 .addComponent(txt_busqueda, javax.swing.GroupLayout.PREFERRED_SIZE, 195, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 131, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jLabel9)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 108, Short.MAX_VALUE)
                 .addComponent(btn_crear)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(btn_modificar)
@@ -401,7 +413,8 @@ public class VistaEmpleado extends javax.swing.JFrame {
                     .addComponent(txt_busqueda, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btn_crear)
                     .addComponent(btn_modificar)
-                    .addComponent(btn_eliminar))
+                    .addComponent(btn_eliminar)
+                    .addComponent(jLabel9))
                 .addContainerGap(44, Short.MAX_VALUE))
         );
 
@@ -436,12 +449,11 @@ public class VistaEmpleado extends javax.swing.JFrame {
     private javax.swing.JButton btn_Guardar;
     private javax.swing.JButton btn_crear;
     private javax.swing.JButton btn_eliminar;
+    private javax.swing.JButton btn_imprimir;
     private javax.swing.JButton btn_modificar;
     private javax.swing.JComboBox<String> cb_horario;
     private com.toedter.calendar.JDateChooser dc_FechaContrato;
     private javax.swing.JDialog dlg_CrearEdit;
-    private javax.swing.JButton jButton4;
-    private javax.swing.JButton jButton5;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel2;
@@ -451,6 +463,7 @@ public class VistaEmpleado extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;

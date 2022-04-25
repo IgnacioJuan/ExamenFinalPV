@@ -5,6 +5,7 @@
  */
 package Controlador;
 
+import Modelo.BD.ConectionPg;
 import Modelo.Empleado.Empleado;
 import Modelo.Empleado.ModelEmpleado;
 import Vista.VistaEmpleado;
@@ -15,9 +16,19 @@ import java.sql.Date;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.GregorianCalendar;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 import javax.xml.ws.Holder;
+import net.sf.jasperreports.engine.JRException;
+import net.sf.jasperreports.engine.JasperFillManager;
+import net.sf.jasperreports.engine.JasperPrint;
+import net.sf.jasperreports.engine.JasperReport;
+import net.sf.jasperreports.engine.util.JRLoader;
+import net.sf.jasperreports.view.JasperViewer;
 
 /**
  *
@@ -32,6 +43,7 @@ public class ControladorEmpleados {
         this.model = model;
         this.vista = vista;
         vista.setVisible(true);
+        vista.setLocationRelativeTo(null);
         CargarTabla();
     }
 
@@ -40,6 +52,8 @@ public class ControladorEmpleados {
         vista.getBtn_crear().addActionListener(l -> abrirDialogo(1));
         vista.getBtn_modificar().addActionListener(l -> abrirDialogo(2));
         vista.getBtn_Guardar().addActionListener(l -> CreatandEdit());
+        vista.getBtn_eliminar().addActionListener(l -> delete());
+        vista.getBtn_imprimir().addActionListener(l -> ImprimirEmpleados());
         //Evento de la busqueda
         vista.getTxt_busqueda().addKeyListener(new KeyAdapter() {
             @Override
@@ -76,7 +90,7 @@ public class ControladorEmpleados {
     private void abrirDialogo(int ce) {
         limpiar();
         String tittle = "";
-        vista.getDlg_CrearEdit().setSize(842, 495);
+        vista.getDlg_CrearEdit().setSize(550, 450);
         vista.getDlg_CrearEdit().setLocationRelativeTo(vista);
         if (ce == 1) {
             vista.getTxt_cedula().setEditable(true);
@@ -207,7 +221,7 @@ public class ControladorEmpleados {
             JOptionPane.showMessageDialog(vista, "Error en la operacion");
         }
     }
-    
+
     private void delete() {
         if (vista.getTbl_empleados().getSelectedRow() > -1) {
             ModelEmpleado empleado = new ModelEmpleado();
@@ -221,6 +235,22 @@ public class ControladorEmpleados {
             }
         } else {
             JOptionPane.showMessageDialog(vista, "Seleccion una fila de la tabla");
+        }
+    }
+
+    private void ImprimirEmpleados() {
+
+        ConectionPg connection = new ConectionPg();
+
+        try {
+            JasperReport jr = (JasperReport) JRLoader.loadObject(getClass().getResource("/Vista/Reporte/Empleados.jasper"));
+
+            JasperPrint jp = JasperFillManager.fillReport(jr, null, connection.getCon());
+            JasperViewer jv = new JasperViewer(jp, false);
+            jv.setVisible(true);
+
+        } catch (JRException ex) {
+            Logger.getLogger(ControladorEmpleados.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
 }
