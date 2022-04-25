@@ -253,7 +253,6 @@ public class VistaEmpleado extends javax.swing.JFrame {
         btn_eliminar = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         txt_busqueda = new javax.swing.JTextField();
-        jLabel9 = new javax.swing.JLabel();
 
         btn_Guardar.setText("Guardar ");
         jPanel4.add(btn_Guardar);
@@ -355,6 +354,7 @@ public class VistaEmpleado extends javax.swing.JFrame {
         );
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Menu Empleados");
 
         btn_imprimir.setText("Imprimir Reporte");
         jPanel1.add(btn_imprimir);
@@ -381,9 +381,7 @@ public class VistaEmpleado extends javax.swing.JFrame {
 
         jLabel1.setText("BUSCADOR");
 
-        jLabel9.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
-        jLabel9.setText("?");
-        jLabel9.setToolTipText("Digite la cedula o nombre del empleado a buscar");
+        txt_busqueda.setToolTipText("Digite la cedula o nombre del empleado a buscar");
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
@@ -394,9 +392,7 @@ public class VistaEmpleado extends javax.swing.JFrame {
                 .addComponent(jLabel1)
                 .addGap(18, 18, 18)
                 .addComponent(txt_busqueda, javax.swing.GroupLayout.PREFERRED_SIZE, 195, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jLabel9)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 108, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(btn_crear)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(btn_modificar)
@@ -413,9 +409,8 @@ public class VistaEmpleado extends javax.swing.JFrame {
                     .addComponent(txt_busqueda, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btn_crear)
                     .addComponent(btn_modificar)
-                    .addComponent(btn_eliminar)
-                    .addComponent(jLabel9))
-                .addContainerGap(44, Short.MAX_VALUE))
+                    .addComponent(btn_eliminar))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -463,7 +458,6 @@ public class VistaEmpleado extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
-    private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;

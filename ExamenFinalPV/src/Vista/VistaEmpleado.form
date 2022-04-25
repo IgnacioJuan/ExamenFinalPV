@@ -331,6 +331,7 @@
   </NonVisualComponents>
   <Properties>
     <Property name="defaultCloseOperation" type="int" value="3"/>
+    <Property name="title" type="java.lang.String" value="Menu Empleados"/>
   </Properties>
   <SyntheticProperties>
     <SyntheticProperty name="formSizePolicy" type="int" value="1"/>
@@ -467,9 +468,7 @@
                   <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
                   <EmptySpace type="separate" max="-2" attributes="0"/>
                   <Component id="txt_busqueda" min="-2" pref="195" max="-2" attributes="0"/>
-                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                  <Component id="jLabel9" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace pref="108" max="32767" attributes="0"/>
+                  <EmptySpace max="32767" attributes="0"/>
                   <Component id="btn_crear" min="-2" max="-2" attributes="0"/>
                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
                   <Component id="btn_modificar" min="-2" max="-2" attributes="0"/>
@@ -489,9 +488,8 @@
                       <Component id="btn_crear" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="btn_modificar" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="btn_eliminar" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="jLabel9" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
-                  <EmptySpace pref="44" max="32767" attributes="0"/>
+                  <EmptySpace max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -518,13 +516,7 @@
           </Properties>
         </Component>
         <Component class="javax.swing.JTextField" name="txt_busqueda">
-        </Component>
-        <Component class="javax.swing.JLabel" name="jLabel9">
           <Properties>
-            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-              <Font name="Dialog" size="18" style="1"/>
-            </Property>
-            <Property name="text" type="java.lang.String" value="?"/>
             <Property name="toolTipText" type="java.lang.String" value="Digite la cedula o nombre del empleado a buscar"/>
           </Properties>
         </Component>
